@@ -2,7 +2,7 @@ import ReactLogo from "../assets/logos/icons8-react-80.png";
 import JSLogo from "../assets/logos/icons8-javascript-80.png";
 import PHPLogo from "../assets/logos/icons8-php-80.png";
 import JavaLogo from "../assets/logos/icons8-java-80.png";
-import CLogo from "../assets/logos/icons8-C-80.png";
+import CLogo from "../assets/logos/icons8-c-80.png";
 import JCLogo from "../assets/logos/icons8-jquery-80.png";
 import TailLogo from "../assets/logos/icons8-tailwindcss-80.png";
 import BootLogo from "../assets/logos/icons8-bootstrap-80.png";
