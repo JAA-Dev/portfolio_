@@ -214,6 +214,14 @@ body{
     border-white/5 border shadow-md dark:text-[#f3f3f3] text-[#0a0a0a]
      /* bg-[#f5f5f5]/90 border-white/10 border */
   }
+  .cards {
+  @apply flex flex-col items-start rounded-xl p-5  
+  dark:bg-[#262626] bg-[#fafafa]
+  border-white/5 border shadow-md 
+  dark:text-[#f3f3f3] text-[#0a0a0a];
+}
+
+
   .share-icon{
     @apply w-4 h-4 mt-1.5 dark:filter dark:invert
   }

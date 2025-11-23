@@ -10,7 +10,8 @@ export const projects = [
         github: "https://github.com/JAA-Dev/NutriTrack",
         demo: "https://nutritrackbustos.com/",
         image: Image1,
-        status: "Active"
+        status: "Active",
+        category: "Nutrition Tracking Web Application"
     },
     {
         title: "Nova Time",
@@ -19,7 +20,8 @@ export const projects = [
         github: "https://github.com/JAA-Dev/Nova_Time",
         demo: "https://nutritrackbustos.com/",
         image: Image2,
-        status: "Active"
+        status: "Active",
+        category: "Watch E-commerce Website"
     },
     {
         title: "PureMeds Pharmacy",
@@ -28,7 +30,7 @@ export const projects = [
         github: "https://github.com/JAA-Dev/Java_POS",
         demo: "https://nutritrackbustos.com/",
         image: Image3,
-        status: "Not Active"
-
+        status: "Not Active",
+        category: "Pharmacy POS System"
     },
 ];
