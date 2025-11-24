@@ -31,13 +31,13 @@ const About = () => {
             </div>
 
             <div>
-              <p className="text-xl text-gray-700 mb-6">
+              <p className="text-xl text-gray-700 dark:text-gray-300 mb-6">
                 I am a fresh graduate with a strong passion for web development,
                 currently focused on mastering frontend technologies. I enjoy
                 building clean, responsive, and user-friendly interfaces that
                 create great user experiences.
               </p>
-              <p className="text-xl text-gray-700 mb-6">
+              <p className="text-xl text-gray-700 dark:text-gray-300 mb-6">
                 While I am open to learning backend development as well, my main
                 goal for now is to deepen my skills in HTML, CSS, JavaScript,
                 and modern frontend frameworks. I'm eager to learn, grow, and

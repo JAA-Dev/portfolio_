@@ -7,9 +7,7 @@ const Footer = () => {
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-between items-center flex-wrap">
             <h1 className="text-lg font-semibold">
-              <a href="#home">
-                <span className="font-color">JAA</span>Dev
-              </a>
+              <a href="#home">JAADev</a>
             </h1>
             <nav className="flex space-x-6 text-sm">
               <a href="#home" className="footer-a">

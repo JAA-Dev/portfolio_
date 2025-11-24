@@ -23,7 +23,7 @@ export const LoadingScreen = ({onComplete}) => {
   }, [onComplete]); //Only run once on mount
 
   return (
-    <div className="Loading flex flex-col items-center">
+    <div className="Loading flex flex-col items-center ">
       <div className="mb-4 text-4xl font-bold">
         {text}
         <span className="animate-blink ml-1">|</span>

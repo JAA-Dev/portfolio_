@@ -50,12 +50,12 @@ const Hero = ({ hasAnimated }) => {
   };
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-white via-gray-50 to-gray-100 pt-20">
+    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-white via-gray-50 to-gray-100 dark:from-[#0a0a0a] dark:via-[#0d0d0d] dark:to-black pt-20">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden" id="home">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-linear-to-br from-blue-400 to-purple-600 rounded-full opacity-10 blur-3xl animate-pulse"></div>
         <div className="absolute -buttom-40 -left-40 w-80 h-80 bg-linear-to-br from-green-400 to-blue-600 rounded-full opacity-10 blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-linear-to-br from-pink-400 to-orange-600 rounded-full opacity-5 blur-3xl animate-pulse delay-500"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-linear-to-br from-pink-400 to-orange-600 dark:bg-linear-to-br dark:from-[#1a1a1a] dark:via-[#222] dark:to-[#111] rounded-full opacity-5 blur-3xl animate-pulse delay-500"></div>
 
         {/* Grid Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(0,000.02)_1px, transparent_1px), linear-gradient(90deg,rgba(0,0,0,0.02)_1px, transparent_1px)] bg-size-[50px_50px]"></div>
@@ -70,19 +70,19 @@ const Hero = ({ hasAnimated }) => {
           >
             {/* Greeting */}
             <div className="mb-4">
-              <span className="inline-block px-4 py-2 bg-black text-white rounded-full text-sm font-medium animate-fade-in">
+              <span className="inline-block px-4 py-2 bg-black text-white dark:bg-white dark:text-black rounded-full text-sm font-medium animate-fade-in">
                 {heroData.greeting}
               </span>
             </div>
 
             {/* Name */}
-            <h1 className="text-5xl py-4 md:text-7xl font-bold mb-4 bg-linear-to-r from-black via-gray-800 to-gray-600 bg-clip-text text-transparent animate-fade-in-up">
+            <h1 className="text-5xl py-4 md:text-7xl font-bold mb-4 bg-linear-to-r from-black via-gray-800 to-gray-600 dark:bg-linear-to-r dark:from-white dark:via-gray-300 dark:to-gray-500 bg-clip-text text-transparent animate-fade-in-up">
               {heroData.name}
             </h1>
 
             {/* Typing role */}
             <div className="h-12 md:h-16 mb-6 flex items-center justify-center">
-              <h2 className="text-2xl md:text-4xl font-semibold text-gray-700">
+              <h2 className="text-2xl md:text-4xl font-semibold text-gray-700 dark:text-gray-300">
                 I'm a{" "}
                 <span className="relative">
                   <span className="text-blue-600 font-bold">
@@ -94,7 +94,7 @@ const Hero = ({ hasAnimated }) => {
             </div>
 
             {/* Discription */}
-            <p className="text-base md:text-lg text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in-up delay-200">
+            <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in-up delay-200">
               {heroData.description}
             </p>
 
@@ -115,8 +115,8 @@ const Hero = ({ hasAnimated }) => {
                   }
                   className={`group relative px-5 py-2.5 rounded-lg transition-all duration-300 font-medium text-sm ${
                     button.variant === "primary"
-                      ? "bg-black text-white shadow-lg hover:shadow-lg hover:bg-black/70"
-                      : "border-2 border-black text-back hover:bg-blue-600 hover:text-white"
+                      ? "bg-black text-white shadow-lg hover:shadow-lg hover:bg-black/70 dark:bg-[#262626]"
+                      : "border-2 border-black text-black hover:bg-blue-600 hover:border-blue-600 hover:text-white dark:bg-blue-600 dark:text-white dark:border-blue-600 dark:hover:border-black dark:hover:bg-transparent"
                   }`}
                 >
                   {button.variant === "primary" && (
@@ -147,7 +147,7 @@ const Hero = ({ hasAnimated }) => {
                     target="_blank"
                     href={social.url}
                     key={index}
-                    className="group p-3 bg-white rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-110 hover:translate-y-1"
+                    className="group p-3 bg-white dark:bg-[#262626] rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-110 hover:translate-y-1"
                   >
                     <IconComponent className={social.design} />
                   </a>
@@ -157,7 +157,7 @@ const Hero = ({ hasAnimated }) => {
 
             {/* Scroll Indicator */}
             <div className="animate-bounce space-y-2 flex justify-center items-center">
-              <button onClick={scrollToAbout} className="group flex flex-col items-center text-gray-600 hover:text-black transition-colors cursor-pointer">
+              <button onClick={scrollToAbout} className="group flex flex-col items-center text-gray-600 hover:text-black dark:text-white dark:hover:text-gray-600 transition-colors cursor-pointer">
                 <span className="text-sm mb-2">Learn More</span>
                 <ArrowDown className="w-6 h-6 group-hover:transform group-hover:transition-y-1 transition-transform"/>
               </button>

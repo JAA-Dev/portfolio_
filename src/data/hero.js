@@ -11,7 +11,7 @@ export const heroData = {
       name: "Github",
       url: "https://github.com/JAA-Dev",
       icon: "Github",
-      design: "w-6 h-6 text-gray-700 group-hover:text-black transition-colors"
+      design: "w-6 h-6 text-gray-700 dark:text-white group-hover:text-black transition-colors"
     },
     {
       name: "LinkedIn",
