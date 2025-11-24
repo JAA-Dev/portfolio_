@@ -1,4 +1,4 @@
-import { AArrowDown, ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { heroData } from "../data/hero";
 import { useEffect, useState } from "react";
 
@@ -149,7 +149,7 @@ const Hero = ({ hasAnimated }) => {
                     key={index}
                     className="group p-3 bg-white rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-110 hover:translate-y-1"
                   >
-                    <IconComponent className="w-6 h-6 text-gray-700 group-hover:text-black transition-colors" />
+                    <IconComponent className={social.design} />
                   </a>
                 );
               })}

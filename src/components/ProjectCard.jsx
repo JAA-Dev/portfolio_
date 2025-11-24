@@ -1,64 +1,110 @@
-import { ExternalLink, Github } from "lucide-react";
+import { Github, MonitorUp } from "lucide-react";
 
-const ProjectCard = ({project}) => {
-  //{project}
+const ProjectCard = ({ project }) => {
+  // Status Color Logic
+  const getStatusColor = (status) => {
+    switch (status) {
+      case "Active":
+        return "bg-green-500 animate-pulse";
+      case "In Progress":
+        return "bg-red-500";
+      default:
+        return "bg-gray-400"; // Not Active
+    }
+  };
+
+  const isActive = project.status === "Active";
+
   return (
-    <div className="cards group hover:shadow-lg hover:-translate-y-1 transition-all duration-300 w-full">
+    <div className="cards group hover:shadow-lg hover:-translate-y-1 transition-all duration-300 w-full relative">
 
-  {/* IMAGE CONTAINER — gaya ng nasa picture */}
-  <div className="w-full rounded-xl overflow-hidden bg-white border border-gray-200">
-    <img
-      src={project.image}
-      alt={project.title}
-      className="w-full h-56 object-cover"
-    />
-  </div>
+      <div className="w-full rounded-xl overflow-hidden bg-white border border-gray-200 relative">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-56 object-cover"
+        />
 
-  {/* TEXT AREA — gaya ng spacing sa sample */}
-  <div className="px-1 py-4">
-    <h3 className="text-base font-semibold mt-2 mb-1 group-hover:text-gray-700 transition-colors">
-      {project.title}
-    </h3>
+        <div className="absolute top-3 right-3 md:flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 hidden">
+          {/* Github always visible */}
+          <a
+            href={project.github}
+            target="_blank"
+            className="p-2 bg-white rounded-full shadow hover:scale-110 transition"
+          >
+            <Github size={18} />
+          </a>
+          {/* Demo only when Active */}
+          {isActive && project.demo && (
+            <a
+              href={project.demo}
+              target="_blank"
+              className="p-2 bg-white rounded-full shadow hover:scale-110 transition"
+            >
+              <MonitorUp size={18} />
+            </a>
+          )}
+        </div>
+        {/* Status Dot */}
+        <div className="absolute bottom-3 left-3 flex items-center gap-2">
+          <span
+            className={`h-3 w-3 rounded-full ${getStatusColor(project.status)}`}
+          ></span>
+          <span className="text-xs bg-white/80 px-2 py-1 rounded-md shadow">
+            {project.status}
+          </span>
+        </div>
+      </div>
 
-    <p className="text-gray-500 text-sm">
-      {project.category}
-    </p>
-  </div>
-</div>
+      {/* Title + Description */}
+      <div className="px-2 py-4">
+        {/* Title + Mobile Icons */}
+        <div className="flex items-center justify-between">
+          <h3 className="text-base font-semibold mt-2 mb-2 group-hover:text-gray-700 transition-colors">
+            {project.title}
+          </h3>
+          {/* Mobile icon buttons */}
+          <div className="flex md:hidden gap-2">
+            {/* Github always visible */}
+            <a
+              href={project.github}
+              target="_blank"
+              className="p-2 bg-gray-100 rounded-full shadow-sm"
+            >
+              <Github size={16} />
+            </a>
+            {/* Demo only when Active */}
+            {isActive && project.demo && (
+              <a
+                href={project.demo}
+                target="_blank"
+                className="p-2 bg-gray-100 rounded-full shadow-sm"
+              >
+                <MonitorUp size={16} />
+              </a>
+            )}
+          </div>
+        </div>
 
+        {/* Description */}
+        <p className="text-gray-600 text-sm mb-3">
+          {project.description}
+        </p>
+
+        {/* Tech Stack */}
+        <div className="flex flex-wrap gap-2 mt-2">
+          {project.tech.map((item, index) => (
+            <span
+              key={index}
+              className="text-xs bg-[#233831]/10 dark:bg-white/10 px-2 py-1 rounded-md"
+            >
+              {item}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 };
 
 export default ProjectCard;
-
-
-// <div className="group bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col h-full">
-//       <div className="h-48 bg-linear-to-br from-gray-100 to-gray-200 flex items-center justify-center mb-2">
-//         <div className="text-6xl font-bold text-gray-300">
-//           {/* {project.title.charAt(0)} */}
-//           <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
-//         </div>
-//       </div>
-//       <div className="p-6 flex flex-col grow mt-6">
-//         <h3 className="text-xl font-semibold mb-3 group-hover:text-gray-600 transition-colors">
-//           {project.title}
-//         </h3>
-//         <p className="text-gray-600 mb-4 text-sm loading-relaxed grow">
-//           {/* Descripton */}
-//           {project.description}
-//           </p>
-//         <div className="flex flex-wrap gap-2 mb-4">
-//             {/* <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">HTML</span> */}
-//             {project.tech.map((item, i) => (
-//             <span key={i} className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">
-//               {item}
-//             </span>
-//           ))}
-
-//         </div>
-//         <div className="flex space-x-4 mt-auto">
-//             <a href={project.github} target="_blank" className="flex items-center text-gray-600 hover:text-black transition-all text-sm"><Github className="w-4 h-4 mr-1" />Code</a>
-//             <a href={project.demo} target="_blank" className="flex items-center text-gray-600 hover:text-black transition-all text-sm"><ExternalLink className="w-4 h-4 mr-1" />Demo</a>
-//         </div>
-//       </div>
-//     </div>

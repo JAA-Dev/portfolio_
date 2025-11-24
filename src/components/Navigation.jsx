@@ -172,6 +172,7 @@ const Navigation = () => {
   }, []);
 
   const navItem = [
+    { href: "#home", label: "Home" },
     { href: "#about", label: "About" },
     { href: "#skills", label: "Skills" },
     { href: "#project", label: "Project" },
@@ -248,7 +249,7 @@ const Navigation = () => {
         {/* Mobile Menu */}
         <div
           className={`md:hidden transition-all duration-300 overflow-hidden
-            ${isMobileMenuOpen ? "max-h-80 opacity-100 mt-4" : "max-h-0 opacity-0"}
+            ${isMobileMenuOpen ? "max-h-90 opacity-100 mt-4" : "max-h-0 opacity-0"}
           `}
         >
           <div className="bg-white dark:bg-gray-800 border border-gray-200 
