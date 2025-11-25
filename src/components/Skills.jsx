@@ -1,8 +1,12 @@
 import { techLogos } from "../data/skills";
 import { userIntersectionObserver } from "../hooks/userIntersectionObserver";
+import { useScrollToTop } from "../hooks/useScrollToTop";
+
 
 const Skills = () => {
   const hasAnimated = userIntersectionObserver();
+  const showScrollTop = useScrollToTop();
+  
   const { TechLogos } = techLogos;
   return (
     <section className="py-6 px-6">

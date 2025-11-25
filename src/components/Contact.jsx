@@ -1,8 +1,10 @@
 import { userIntersectionObserver } from "../hooks/userIntersectionObserver";
+import { useScrollToTop } from "../hooks/useScrollToTop";
 import { Github, Phone, Mail, SendHorizonal, Instagram } from "lucide-react";
 
 const Contact = () => {
   const hasAnimated = userIntersectionObserver();
+  const showScrollTop = useScrollToTop();
 
   return (
     <section className="pt-16 px-6" id="contact">
@@ -38,7 +40,7 @@ const Contact = () => {
                   <input
                     type="text"
                     placeholder="Enter your name"
-                    className="w-full p-2 rounded-lg bg-white dark:bg-white/10 border border-gray-300 dark:border-white/20 focus:ring-2 focus:ring-[#233831]"
+                    className="w-full p-2 rounded-lg bg-white dark:bg-white/10 border border-gray-300 dark:border-white/20 placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-[#233831]"
                   />
                 </div>
                 <div>
@@ -46,7 +48,7 @@ const Contact = () => {
                   <input
                     type="email"
                     placeholder="Enter your email"
-                    className="w-full p-2 rounded-lg bg-white dark:bg-white/10 border border-gray-300 dark:border-white/20 focus:ring-1 focus:ring-[#233831]"
+                    className="w-full p-2 rounded-lg bg-white dark:bg-white/10 border border-gray-300 dark:border-white/20 placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-[#233831]"
                   />
                 </div>
                 <div>
@@ -54,7 +56,7 @@ const Contact = () => {
                   <textarea
                     rows="5"
                     placeholder="Write your message..."
-                    className="w-full p-2 rounded-lg bg-white dark:bg-white/10 border border-gray-300 dark:border-white/20 focus:ring-1 focus:ring-[#233831]"
+                    className="w-full p-2 rounded-lg bg-white dark:bg-white/10 border border-gray-300 dark:border-white/20 placeholder-gray-400 dark:placeholder-gray-500 focus:ring-1 focus:ring-[#233831]"
                   ></textarea>
                 </div>
                 <button

@@ -1,9 +1,13 @@
 import BsuLogo from "../assets/logo/bsu-logo.png";
 import CambaogLogo from "../assets/logo/cambaog1.jpg";
 import { userIntersectionObserver } from "../hooks/userIntersectionObserver";
+import { useScrollToTop } from "../hooks/useScrollToTop";
+
 
 const Education = () => {
   const hasAnimated = userIntersectionObserver();
+  const showScrollTop = useScrollToTop();
+
   return (
     <section className="py-16 px-6">
       <div className="max-w-6xl mx-auto">
