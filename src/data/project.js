@@ -1,8 +1,18 @@
 import  Image1  from "../assets/nutritrack.png";
 import Image2  from "../assets/novatime.png";
 import  Image3  from "../assets/puremeds.png";
+import  Image4  from "../assets/journalnow.png";
 
 export const projects = [
+    {
+        title: "JournalNow",
+        description: "A digital trading journal designed to help traders record, organize, and analyze their performance. It allows users to input important trade details such as the trading pair, trade type, entry price, stop loss, take profit, and overall result. The system automatically marks each trade as win or lose and summarizes the results to help traders track their progress and improve their strategy over time.",
+        tech: ["React", "Laravel", "TypeScript", "Tailwind", "MySql"],
+        github: "",
+        demo: "",
+        image: Image4,
+        status: "In Progress",
+    },
     {
         title: "NutriTrack",
         description: "A health monitoring system for undernourished children. NutriTrack is a digital platform designed to help healthcare workers and local agencies record and analyze data of undernourished children. It allows users to input essential information such as weight, height, and age, and instantly generates the child’s nutritional status based on the data provided.",
