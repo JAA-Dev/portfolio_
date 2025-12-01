@@ -8,7 +8,7 @@ export const projects = [
         title: "JournalNow",
         description: "A digital trading journal designed to help traders record, organize, and analyze their performance. It allows users to input important trade details such as the trading pair, trade type, entry price, stop loss, take profit, and overall result. The system automatically marks each trade as win or lose and summarizes the results to help traders track their progress and improve their strategy over time.",
         tech: ["React", "Laravel", "TypeScript", "Tailwind", "MySql"],
-        github: "",
+        github: "https://github.com/JAA-Dev/journalnow",
         demo: "",
         image: Image4,
         status: "In Progress",
