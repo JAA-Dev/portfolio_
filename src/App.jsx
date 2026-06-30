@@ -25,6 +25,9 @@ function App() {
   // themeLoading = "dark" | "light" | false
   const [themeLoading, setThemeLoading] = useState(false);
 
+  // Check if current month is December
+  const isDecember = new Date().getMonth() === 11;
+
   return (
     <>
       {/* Initial App Loading */}
@@ -39,13 +42,15 @@ function App() {
         <LoadingLight onComplete={() => setThemeLoading(false)} />
       )}
 
-      {/* Snowfall Container */}
-      <div className="fixed inset-0 pointer-events-none z-50">
-        <SnowFall
-          color="#82C3D9"
-          snowflakeCount={150} // Opsyonal: dami ng snow
-        />
-      </div>
+      {/* Show Snowfall only in December */}
+      {isDecember && (
+        <div className="fixed inset-0 pointer-events-none z-50">
+          <SnowFall
+            color="#82C3D9"
+            snowflakeCount={150}
+          />
+        </div>
+      )}
       <div
         className={`min-h-screen bg-white dark:bg-black text-black dark:text-white 
         transition-opacity duration-700 ${
